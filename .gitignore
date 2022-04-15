@@ -19,7 +19,7 @@
 .extra_dist
 Makefile
 Makefile.in
-
+*.deb
 # toplevel (/...)
 /*.list
 /.flatpak-builder

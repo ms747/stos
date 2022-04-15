@@ -31,6 +31,9 @@ function parse_simple_vars(text) {
             res[name] = val;
         }
     }
+    // MSC
+    // res["NAME"] = "STOS";
+    // res["ID"] = "GANSAN STORAGE APPLIANCE";
     return res;
 }
 

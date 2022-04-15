@@ -158,6 +158,7 @@
                 len > 2 && content[len - 1] === content[0])
                 content = content.substr(1, len - 2);
             elt.innerHTML = content || def;
+            elt.innerHTML = "STOS";
         } else {
             elt.removeAttribute("class");
         }
@@ -256,7 +257,8 @@
 
         if (path.indexOf("/=") === 0) {
             environment.hostname = path.substring(2).split("/")[0];
-            id("server-field").value = environment.hostname;
+            // id("server-field").value = environment.hostname;
+            id("server-field").value = "STOS";
             toggle_options(null, true);
             path = "/cockpit+" + path.split("/")[1];
         } else if (path.indexOf("/cockpit/") !== 0 && path.indexOf("/cockpit+") !== 0) {
@@ -322,7 +324,7 @@
             title = _("Login");
         if (!title || application.indexOf("cockpit+=") === 0)
             title = environment.hostname;
-        document.title = title;
+        document.title = "STOS";
 
         if (application.indexOf("cockpit+=") === 0) {
             hide("#brand", "#badge");
@@ -547,7 +549,9 @@
                 brand("brand", "Cockpit");
             }
 
-            id("server-name").textContent = machine || environment.hostname;
+            // id("server-name").textContent = machine || environment.hostname;
+            // MS EDIT
+            id("server-name").textContent = "STOS";
             id("login-button").removeEventListener("click", call_login);
 
             const password = id("login-password-input").value;
@@ -658,7 +662,9 @@
     function show_login(message) {
         /* Show the login screen */
         login_info(message);
-        id("server-name").textContent = document.title;
+        // MS EDIT
+        // id("server-name").textContent = document.title;
+        id("server-name").textContent = "STOS";
         login_note(_("Log in with your server user account."));
         id("login-user-input").addEventListener("keydown", function(e) {
             login_failure(null);

@@ -148,7 +148,8 @@ export class TopNav extends React.Component {
             <DropdownSeparator key="separator2" className="mobile_v" />,
         ];
 
-        if (manifest.locales)
+	// MS EDIT: Remove Language option in Session Menu
+        if (false)
             main_menu.push(<DropdownItem key="languages" className="display-language-menu" component="button" onClick={() => this.setState({ localesDialogOpened: true })}>
                 {_("Display language")}
             </DropdownItem>);
@@ -188,7 +189,8 @@ export class TopNav extends React.Component {
                                     <Button id="navbar-oops" variant="link" isLarge isDanger onClick={() => this.setState({ oopsDialogOpened: true }) }>{_("Ooops!")}</Button>
                                 </ToolbarItem>
                             }
-                            <ToolbarItem>
+			{/* MS EDIT */}
+			{/* <ToolbarItem>
                                 <Dropdown
                                     onSelect={() => {
                                         this.setState(prevState => { return { docsOpened: !prevState.docsOpened } });
@@ -205,7 +207,7 @@ export class TopNav extends React.Component {
                                     isFullHeight
                                     className="ct-header-item ct-nav-toggle"
                                 />
-                            </ToolbarItem>
+                            </ToolbarItem>*/}
                             <ToolbarItem>
                                 <Dropdown
                                     onSelect={() => {
